@@ -12,22 +12,12 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 const dishRouter = require('./routes/dishRouter');
-const dishIdRouter = require('./routes/dishRouter')
-
 const leaderRouter = require('./routes/leaderRouter');
-const leaderIdRouter = require('./routes/leaderRouter');
-
 const promoRouter = require('./routes/promoRouter');
-const promoIdRouter = require('./routes/promoRouter');
 
 app.use('/dishes', dishRouter);
-app.use('/dishes/:dishId', dishIdRouter);
-
 app.use('/leaders', leaderRouter);
-app.use('/leaders/:leaderId', leaderIdRouter);
-
 app.use('/promos', promoRouter);
-app.use('/promos/:promoId', promoIdRouter);
 
 app.use(express.static(__dirname + '/public'));
 

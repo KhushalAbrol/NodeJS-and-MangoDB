@@ -25,14 +25,7 @@ promoRouter.route('/')
     res.end('Deleting all Promotions');
 });
 
-const promoIdRouter = express.Router();
-
-promoIdRouter.route('/:promotionId')
-.all((req,res,next) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    next();
-})
+promoRouter.route('/:promotionId')
 .get((req,res,next) => {
     res.end('Will send details of the promotion: ' + req.params.promotionId +' to you!');
 })
@@ -50,4 +43,3 @@ promoIdRouter.route('/:promotionId')
 });
 
 module.exports = promoRouter;
-module.exports = promoIdRouter;

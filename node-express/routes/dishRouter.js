@@ -25,14 +25,7 @@ dishRouter.route('/')
     res.end('Deleting all dishes');
 });
 
-const dishIdRouter = express.Router();
-
-dishIdRouter.route('/:dishId')
-.all((req,res,next) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'text/plain');
-    next();
-})
+dishRouter.route('/:dishId')
 .get((req,res,next) => {
     res.end('Will send details of the dish: ' + req.params.dishId +' to you!');
 })
@@ -50,4 +43,3 @@ dishIdRouter.route('/:dishId')
 })
 
 module.exports = dishRouter;
-module.exports = dishIdRouter;
